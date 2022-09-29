@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AiOutLineClose, AiOutLineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   return (
@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="md:hidden">
-          <AiOutLineMenu size={25} />
+          <AiOutlineMenu size={25} />
         </div>
       </div>
       <div className="fixed top-0 left-0 w-full h-screen bg-black/70">
@@ -41,7 +41,7 @@ const Navbar = () => {
             <div className="flex justify-between w-full item-center">
               <Image src='/../public/assets/skills/navLogo.png' width='87' height='35' alt='/' />
               <div className="p-3 rounded-full cursor-pointer shadow-gray-400">
-                <AiOutLineClose/>
+                <AiOutlineClose/>
               </div>
             </div>
           </div>
@@ -52,4 +52,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar
+export default Navbar;
