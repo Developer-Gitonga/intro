@@ -1,7 +1,7 @@
-import React from "react";
-import { AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import React from "react"
+import { AiOutlineMail } from "react-icons/ai"
+import { BsFillPersonLinesFill } from "react-icons/bs"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 const Main = () => {
   return (
@@ -38,7 +38,7 @@ const Main = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main
