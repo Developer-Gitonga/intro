@@ -1,10 +1,10 @@
 import Image from "next/image"
 import React from "react"
-import cryptoImg from "../public/assets/projects/crypto.jpg"
+import netflixImg from "../public/assets/projects/netflix.jpg"
 import { RiRadioButtonFill } from "react-icons/ri"
 import Link from "next/link"
 
-const crypto = () => {
+const netflix = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -13,11 +13,11 @@ const crypto = () => {
           className="absolute z-1"
           layout="fill"
           objectFit="cover"
-          src={cryptoImg}
+          src={netflixImg}
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-2">Crypto App</h2>
+          <h2 className="py-2">Netflix App</h2>
           <h3>React JS / Tailwind / Firebase</h3>
         </div>
       </div>
@@ -72,5 +72,4 @@ const crypto = () => {
   )
 }
 
-
-export default crypto
+export default netflix
