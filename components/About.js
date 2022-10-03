@@ -18,8 +18,7 @@ const About = () => {
               // I am not your normal developer
             </p>
             <p className="py-2 text-gray-600">
-              I have spent the last 12 years in the fire service working as a
-              professional firefighter & paramedic. I have always had a knack
+              I have spent the last 6 years in the construction business as a landscape architect. I have always had a knack
               for technology and working with computers. In 2019 I started
               working with HTML & CSS to make some minor edits on a small
               business website that I was operating. What I thought was just a
