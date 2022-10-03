@@ -6,9 +6,33 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { HiOutlineChevronDoubleUp } from "react-icons/hi"
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
+import { useRouter } from "next/router"
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const router = useRouter();
+  async function onSubmitForm(values) {
+    let config = {
+      method: "post",
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: values,
+    };
+
+    try {
+      const response = await axios(config);
+      console.log(response);
+      if (response.status == 200) {
+        reset();
+        toast(
+          "success",
+          "Thank you for contacting us, we will be in touch soon."
+        );
+      }
+    } catch (err) {}
+  }
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
@@ -75,7 +99,7 @@ const Contact = () => {
                     <input
                       {...register("Number")}
                       className="flex p-3 border-2 border-gray-300 rounded-lg"
-                      type="text"
+                      type="number"
                     />
                   </div>
                 </div>
