@@ -25,7 +25,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className="py-2">Gitonga here</h2>
+                <h2 className="py-2">Gitonga Mwangi</h2>
                 <p>Fullstack Developer</p>
                 <p className="py-4">
                   I am available for freelance or full-time positions. Contact

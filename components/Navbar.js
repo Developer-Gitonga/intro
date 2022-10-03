@@ -1,49 +1,50 @@
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-// import { useRouter } from 'next/router';
-import NavLogo from "../public/assets/navLogo.png";
+import Image from "next/image"
+import Head from "next/head"
+import Link from "next/link"
+import React, { useState, useEffect } from "react"
+import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import { BsFillPersonLinesFill } from "react-icons/bs"
+import { useRouter } from 'next/router'
+import NavLogo from "../public/assets/navLogo.png"
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState("#ecf0f3");
-  const [linkColor, setLinkColor] = useState("#1f2937");
-  // const [position, setPosition] = useState('fixed')
-  // const router = useRouter();
+  const [nav, setNav] = useState(false)
+  const [shadow, setShadow] = useState(false)
+  const [navBg, setNavBg] = useState("#ecf0f3")
+  const [linkColor, setLinkColor] = useState("#1f2937")
+  const [position, setPosition] = useState('fixed')
+  const router = useRouter()
 
-  // useEffect(() => {
-  //   if (
-  //     router.asPath === '/property' ||
-  //     router.asPath === '/crypto' ||
-  //     router.asPath === '/netflix' ||
-  //     router.asPath === '/twitch'
-  //   ) {
-  //     setNavBg('transparent');
-  //     setLinkColor('#ecf0f3');
-  //   } else {
-  //     setNavBg('#ecf0f3');
-  //     setLinkColor('#1f2937');
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    if (
+      router.asPath === '/property' ||
+      router.asPath === '/crypto' ||
+      router.asPath === '/netflix' ||
+      router.asPath === '/twitch' 
+    ) {
+      setNavBg('transparent')
+      setLinkColor('#ecf0f3')
+    } else {
+      setNavBg("#8a99a5");
+      setLinkColor('#1f2937')
+    }
+  }, [router])
 
   const handleNav = () => {
-    setNav(!nav);
-  };
+    setNav(!nav)
+  }
 
   useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
-        setShadow(true);
+        setShadow(true)
       } else {
-        setShadow(false);
+        setShadow(false)
       }
-    };
-    window.addEventListener("scroll", handleShadow);
-  }, []);
+    }
+    window.addEventListener("scroll", handleShadow)
+  }, [])
 
   return (
     <div
@@ -57,13 +58,8 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full h-full px-2 2xl:px-16">
         <Link href="/">
           <a>
-            <Image
-              src={NavLogo}
-              alt="/"
-              width="125"
-              height="50"
-              className="cursor-pointer"
-            />
+           
+            <Head>Connect</Head>
           </a>
         </Link>
         <div>
@@ -109,7 +105,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? " fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
+              ? " fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#8a99a5] p-10 ease-in duration-500"
               : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
           }
         >
@@ -211,7 +207,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
