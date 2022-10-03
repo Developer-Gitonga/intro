@@ -21,7 +21,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>CSS</h3>
+                <h3>HTML</h3>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>JavaScript</h3>
+                <h3>CSS</h3>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>React</h3>
+                <h3>JavaScript</h3>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Tailwind</h3>
+                <h3>React</h3>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Firebase</h3>
+                <h3>Tailwind</h3>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Skills = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Github</h3>
+                <h3>Firebase</h3>
               </div>
             </div>
           </div>
