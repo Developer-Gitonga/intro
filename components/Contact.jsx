@@ -4,8 +4,11 @@ import { AiOutlineMail } from "react-icons/ai"
 import { BsFillPersonLinesFill } from "react-icons/bs"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { HiOutlineChevronDoubleUp } from "react-icons/hi"
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
 
 const Contact = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
@@ -55,11 +58,12 @@ const Contact = () => {
           {/* right */}
           <div className="w-full h-auto col-span-3 shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form onSubmit={handleSubmit((data) => console.log(data))}>
                 <div className="grid w-full gap-4 py-2 md:grid-cols-2">
                   <div className="flex flex-col">
                     <label className="py-2 text-sm uppercase">Name</label>
                     <input
+                      {...register("Name")}
                       className="flex p-3 border-2 border-gray-300 rounded-lg"
                       type="text"
                     />
@@ -69,6 +73,7 @@ const Contact = () => {
                       Phone Number
                     </label>
                     <input
+                      {...register("Number")}
                       className="flex p-3 border-2 border-gray-300 rounded-lg"
                       type="text"
                     />
@@ -77,13 +82,15 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="py-2 text-sm uppercase">Email</label>
                   <input
+                    {...register("Email", { required: true })}
                     className="flex p-3 border-2 border-gray-300 rounded-lg"
                     type="email"
-                  />
+                  /> {errors.Email && <p>Email is required</p>}
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="py-2 text-sm uppercase">Subject</label>
                   <input
+                    {...register("Subject")}
                     className="flex p-3 border-2 border-gray-300 rounded-lg"
                     type="text"
                   />
@@ -95,7 +102,8 @@ const Contact = () => {
                     rows="10"
                   ></textarea>
                 </div>
-                <button className="w-full p-4 mt-4 text-gray-100">
+                <button 
+                  className="w-full p-4 mt-4 text-gray-100">
                   Send Message
                 </button>
               </form>
@@ -111,6 +119,6 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 export default Contact
